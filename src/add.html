@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DT207G - Moment2 - Uppgift2</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/main.js" type="module"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Mitt CV</h1>
+    </header>
+    <nav>
+        <ul>
+            <li class="option"><a href="index.html">Startsida</a></li>
+            <li class="current"><a href="add.html">Lägg till arbete</a></li>
+            <li class="option"><a href="about.html">Om sidan</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Lägg till arbete:</h2>
+        <form id="workexperienceForm">
+            <label for="company">Företag:</label><br>
+            <input type="text" id="company" name="company" required><br>
+
+            <label for="role">Roll:</label><br>
+            <input type="text" id="role" name="role" required><br>
+
+            <label for="location">Stad:</label><br>
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="startDate">Startdatum:</label><br>
+            <input type="date" id="startDate" name="startDate" required><br>
+
+            <label for="endDate">Slutdatum:</label><br>
+            <input type="date" id="endDate" name="endDate" required><br>
+
+            <label for="description">Beskrivning:</label><br>
+            <textarea id="description" name="description" rows="5"></textarea><br>
+
+            <div class="btnContainer"><button type="submit">SPARA</button></div>
+        </form>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+    font-family: 'Roboto', Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    overflow-x: hidden;
+    background-color: #ECF0F1;
+}
+
+main {
+    flex: 1;
+    width: 80%;
+    max-width: 1000px;
+    padding: 2%;
+    background-color: white;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+p {
+    line-height: 1.7em;
+}
+
+header {
+    background-color: #2C3E50;
+    color: white;
+    width: 80%;
+    max-width: 1000px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+th,
+td {
+    border: 1px solid grey;
+    padding: 20px;
+    text-align: left;
+}
+
+th {
+    background-color: rgb(232, 231, 231);
+}
+
+nav {
+    background-color: #1d7bba;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+}
+
+li {
+    flex: 1;
+    text-align: center;
+    border-right: none;
+    border-bottom: none;
+
+}
+
+.current {
+    background-color: orange;
+}
+
+.current a {
+    color: black;
+}
+
+.option:hover {
+    background-color: orange;
+}
+
+.option a:hover {
+    color: black;
+}
+
+button {
+    padding: 5px;
+    cursor: pointer;
+}
+
+form {
+    border: 2px solid grey;
+    padding: 30px;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+}
+
+input,
+textarea {
+    margin-bottom: 20px;
+    margin-top: 10px;
+    border: 2px solid lightgrey;
+    border-radius: 5px;
+    width: 500px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btnContainer {
+    text-align: center;
+}
+
+input[type="date"] {
+    width: 150px;
+}
+
+.text {
+    width: 600px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width : 1115px) {
+
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+        background-color: white;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: right;
+        border: transparent;
+        border-bottom: 1px solid lightgrey;
+    }
+
+    th {
+        display: none;
+    }
+
+    td {
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%;
+        padding-left: 10px;
+        font-weight: bold;
+        text-align: left;
+    }
+
+    td a {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        display: block;
+        max-width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+}
+
+@media screen and (max-width : 800px) {
+
+    form {
+        width: 80%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+    }
+
+    main,
+    header,
+    nav {
+        width: 100%;
+    }
+
+    .text {
+        width: 90%;
+    }
+
+}
+
+@media screen and (max-width : 450px) {
+
+    form {
+        border: none;
+    }
+
+}
