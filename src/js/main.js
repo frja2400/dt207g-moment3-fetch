@@ -1,6 +1,6 @@
 "use strict";
 
-//Adderar en funktion som visar meddelande när min render-databas får i viloläge.
+//Funktion som visar på skärmen att data laddas.
 function showLoadingMessage() {
     const tableBody = document.getElementById("workexperienceTable");
     tableBody.innerHTML = `<tr><td colspan="7">Laddar data...</td></tr>`;
@@ -11,7 +11,7 @@ async function getData() {
     showLoadingMessage();
     try {
 
-        const response = await fetch("https://dt207g-moment2-rest.onrender.com/api/workexperience");
+        const response = await fetch("https://dt207g-moment3-exym.onrender.com/workexperience");
 
         if (!response.ok) throw new Error("Nätverksfel");
 
@@ -55,7 +55,7 @@ function renderData(data) {
         //Lägg till händelselyssnare för radera-knappen
         const deleteButton = row.querySelector(".deleteBtn");
         deleteButton.addEventListener("click", function () {
-            deleteWorkExperience(work.id, row);     //Anropa delete-funktionen.
+            deleteWorkExperience(work._id, row);     //Anropa delete-funktionen.
         });
 
         tableBody.appendChild(row);
@@ -82,7 +82,7 @@ if (form) {
         }
 
         try {
-            const response = await fetch("https://dt207g-moment2-rest.onrender.com/api/workexperience", {
+            const response = await fetch("https://dt207g-moment3-exym.onrender.com/workexperience", {
                 //Anger att det är ett POST-anrop
                 method: "POST",
                 //Anger att jag vill skicka JSON-data till min body
@@ -114,7 +114,7 @@ function formatDate(dateString) {
 //Funktion som raderar data
 async function deleteWorkExperience(id, row) {
     try {
-        const response = await fetch(`https://dt207g-moment2-rest.onrender.com/api/workexperience/${id}`, {
+        const response = await fetch(`https://dt207g-moment3-exym.onrender.com/workexperience/${id}`, {
             method: "DELETE",
         });
 
