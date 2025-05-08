@@ -140,6 +140,27 @@ input[type="date"] {
     margin: 0 auto;
 }
 
+.success-message {
+    color: green;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.delete-message {
+    color: grey;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 @media screen and (max-width : 1115px) {
 
     table,

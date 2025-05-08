@@ -22,24 +22,27 @@
     </nav>
     <main>
         <h2>Lägg till arbete:</h2>
-        <form id="workexperienceForm">
-            <label for="company">Företag:</label><br>
+        <div id="message"></div>
+        <form id="workexperienceForm" novalidate> <!--Adderar novalidate så att mina JS-kontroller och felmeddelanden visas.-->
+            <label for="company">Företag*:</label><br>
             <input type="text" id="company" name="company" required><br>
 
-            <label for="role">Roll:</label><br>
+            <label for="role">Roll*:</label><br>
             <input type="text" id="role" name="role" required><br>
 
-            <label for="location">Stad:</label><br>
+            <label for="location">Stad*:</label><br>
             <input type="text" id="location" name="location" required><br>
 
-            <label for="startDate">Startdatum:</label><br>
+            <label for="startDate">Startdatum*:</label><br>
             <input type="date" id="startDate" name="startDate" required><br>
 
-            <label for="endDate">Slutdatum:</label><br>
+            <label for="endDate">Slutdatum*:</label><br>
             <input type="date" id="endDate" name="endDate" required><br>
 
             <label for="description">Beskrivning:</label><br>
             <textarea id="description" name="description" rows="5"></textarea><br>
+
+            <p><i>* = Obligatoriska fält.</i></p>
 
             <div class="btnContainer"><button type="submit">SPARA</button></div>
         </form>

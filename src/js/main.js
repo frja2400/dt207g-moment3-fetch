@@ -1,5 +1,9 @@
 "use strict";
 
+//Hämtar element för meddelanden
+const messageEl = document.getElementById('message');
+const deleteMessageEl = document.getElementById('deleteMessage');
+
 //Funktion som visar på skärmen att data laddas.
 function showLoadingMessage() {
     const tableBody = document.getElementById("workexperienceTable");
@@ -81,6 +85,19 @@ if (form) {
             description: document.getElementById("description").value
         }
 
+        //Kontrollerar att obligatoriska fält fylls i och skriver ut felmeddelande.
+        if (
+            !newWorkExperience.companyname.trim() ||
+            !newWorkExperience.jobtitle.trim() ||
+            !newWorkExperience.location.trim() ||
+            !newWorkExperience.startdate.trim() ||
+            !newWorkExperience.enddate.trim()
+        ) {
+            messageEl.textContent = "Alla obligatoriska fält måste vara ifyllda.";
+            messageEl.className = "error-message";
+            return;
+        }
+
         try {
             const response = await fetch("https://dt207g-moment3-exym.onrender.com/workexperience", {
                 //Anger att det är ett POST-anrop
@@ -95,11 +112,14 @@ if (form) {
 
             if (!response.ok) throw new Error("Något gick fel vid sparandet.");
 
-            alert("Arbetslivserfarenhet tillagd!");
+            messageEl.textContent = "Arbetslivserfarenhet tillagd!";
+            messageEl.className = "success-message";
             form.reset();
+            return;
         } catch (error) {
             console.error("Fel vid POST:", error);
-            alert("Kunde inte spara.");
+            messageEl.textContent = "Kunde inte spara arbetslivserfarenhet.";
+            messageEl.className = "error-message";
         }
     });
 }
@@ -122,9 +142,11 @@ async function deleteWorkExperience(id, row) {
 
         //Ta bort från DOM efter att det är raderat från servern
         row.remove();
-        alert("Arbetslivserfarenhet raderad!");
+        deleteMessageEl.textContent = "Arbetslivserfarenhet raderad!";
+        deleteMessageEl.className = "delete-message";
     } catch (error) {
         console.error("Fel vid radering:", error);
-        alert("Kunde inte radera posten.");
+        deleteMessageEl.textContent = "Kunde inte radera arbetslivserfarenhet.";
+        deleteMessageEl.className = "error-message";
     }
 }
